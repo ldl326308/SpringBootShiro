@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nf.lc.myspringbootdemo.dao.AdminPowerMapper">
+
+    <select id="findByAdminNumberToAdminPower" parameterType="string" resultType="com.nf.lc.myspringbootdemo.entity.AdminPower">
+        select admin.*,`power`.*  from `admin` inner join `nexus` on `admin`.admin_id = `nexus`.admin_id
+	    inner join `power` on `power`.power_id = `nexus`.power_id
+	    	where admin.admin_number = #{adminNumber}
+    </select>
+
+</mapper>
